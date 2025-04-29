@@ -265,7 +265,106 @@ export const mockDataJohnDoe: MetricData[] = [
             absoluteChange: 0,
             percentChange: 0
         }
-    }
+    },
+    {
+        country: "Canada",
+        state: "Ontario",
+        city: "Toronto",
+        sector: "Food",
+        category: "Beverages",
+        startDate: "2024-04-01",
+        endDate: "2024-04-30",
+        mySpend: {
+            current: 115000,
+            reference: 100000,
+            absoluteChange: 15000,
+            percentChange: 15
+        },
+        sameStoreSpend: {
+            current: 90000,
+            reference: 85000,
+            absoluteChange: 5000,
+            percentChange: 5.88
+        },
+        newStoreSpend: {
+            current: 20000,
+            reference: 10000,
+            absoluteChange: 10000,
+            percentChange: 100
+        },
+        lostStoreSpend: {
+            current: 5000,
+            reference: 5000,
+            absoluteChange: 0,
+            percentChange: 0
+        }
+    },
+    {
+        country: "USA",
+        state: "New York",
+        city: "New York City",
+        sector: "Food",
+        category: "Snacks",
+        startDate: "2024-04-01",
+        endDate: "2024-04-30",
+        mySpend: {
+            current: 140000,
+            reference: 120000,
+            absoluteChange: 20000,
+            percentChange: 16.67
+        },
+        sameStoreSpend: {
+            current: 100000,
+            reference: 95000,
+            absoluteChange: 5000,
+            percentChange: 5.26
+        },
+        newStoreSpend: {
+            current: 30000,
+            reference: 20000,
+            absoluteChange: 10000,
+            percentChange: 50
+        },
+        lostStoreSpend: {
+            current: 10000,
+            reference: 5000,
+            absoluteChange: 5000,
+            percentChange: 100
+        }
+    },
+    {
+        country: "Mexico",
+        state: "Mexico City",
+        city: "Central",
+        sector: "Food",
+        category: "Juice",
+        startDate: "2024-04-01",
+        endDate: "2024-04-30",
+        mySpend: {
+            current: 85000,
+            reference: 80000,
+            absoluteChange: 5000,
+            percentChange: 6.25
+        },
+        sameStoreSpend: {
+            current: 70000,
+            reference: 65000,
+            absoluteChange: 5000,
+            percentChange: 7.69
+        },
+        newStoreSpend: {
+            current: 10000,
+            reference: 10000,
+            absoluteChange: 0,
+            percentChange: 0
+        },
+        lostStoreSpend: {
+            current: 5000,
+            reference: 5000,
+            absoluteChange: 0,
+            percentChange: 0
+        }
+    },
 ];
 
 // Jane Smith's data (with some modifications from John's data)
