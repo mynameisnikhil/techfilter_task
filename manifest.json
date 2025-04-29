@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Task Filter",
+  "name": "Task Filter",
   "icons": [
     {
       "src": "favicon.ico",
