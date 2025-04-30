@@ -1,6 +1,113 @@
-# Getting Started with Create React App
+## Prerequisites
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Ensure you have the correct versions of Node.js and npm installed:
+
+- Node.js: `18.12.1`
+- npm: `8.19.2`
+
+You can verify the versions by running:
+
+```bash
+node -v
+npm -v
+```
+
+## Installing Dependencies
+
+To install the required dependencies, run:
+
+```bash
+npm install
+```
+
+## Mock Data Structure
+
+The application uses mock data to simulate user metrics and filters. The mock data is structured as follows:
+
+Example:
+
+```ts
+{
+  country: "India",
+  state: "Maharashtra",
+  city: "Mumbai",
+  sector: "Retail",
+  category: "Juice",
+  startDate: "2025-03-01",
+  endDate: "2025-03-31",
+  mySpend: {
+    current: 120000,
+    reference: 100000,
+    absoluteChange: 20000,
+    percentChange: 20
+  },
+  sameStoreSpend: {
+    current: 95000,
+    reference: 90000,
+    absoluteChange: 5000,
+    percentChange: 5.56
+  },
+  newStoreSpend: {
+    current: 15000,
+    reference: 10000,
+    absoluteChange: 5000,
+    percentChange: 50
+  },
+  lostStoreSpend: {
+    current: 10000,
+    reference: 15000,
+    absoluteChange: -5000,
+    percentChange: -33.33
+  }
+}
+```
+
+## User's Data Structure
+
+```ts
+{
+    id: "john-doe",
+    name: "John Doe",
+    initials: "JD",
+    role: "Retail Manager",
+    avatarColor: "#1976d2"
+}
+```
+
+## Testing or Simulating User Switching and Filters
+
+1. **User Switching**:
+
+   - The application uses a `userDataMap` to associate user IDs with their respective mock data.
+   - To simulate switching users, modify the `userId` parameter in the relevant function (e.g., `generateTimeSeriesData`, `generateStackedBarData`).
+   - Example:
+     ```ts
+     const userId = "john-doe"; // Change this to "jane-smith", "michael-patel", etc.
+     const data = generateTimeSeriesData(userId);
+     ```
+
+2. **Filters**:
+
+   - Filters are applied using the `Filters` interface, which includes attributes like `startDate`, `endDate`, `sector`, `category`, etc.
+   - To test filters, update the filter values in the application state or directly in the mock data.
+   - Example:
+     ```ts
+     const filters: Filters = {
+       startDate: new Date("2025-01-01"),
+       endDate: new Date("2025-03-31"),
+       sector: "Retail",
+       category: "Juice",
+       attributes: ["Country", "State"],
+       metrics: ["My Spend", "New Store Spend"],
+     };
+     ```
+
+3. **Simulating Changes**:
+   - Modify the mock data in `/src/data/mockData.ts` to simulate different scenarios, such as changes in metrics or new user data.
+   - Example:
+     ```ts
+     mockDataJohnDoe[0].mySpend.current = 150000; // Update the current spend value.
+     ```
 
 ## Available Scripts
 
@@ -26,21 +133,3 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
